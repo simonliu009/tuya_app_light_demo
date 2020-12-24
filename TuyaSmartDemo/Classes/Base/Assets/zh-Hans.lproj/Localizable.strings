@@ -259,7 +259,7 @@
 "device_is_unconnect" = "未连接";
 "device_name_edit_failure" = "设备名称修改失败";
 "device_name_is_null" = "设备名称不能为空";
-"device_on_off" = "设备开关";
+"NSString * const kLightSwtichDpId" = "设备开关";
 "device_remove_failure" = "设备移除失败";
 "device_reset" = "设备重置";
 "device_syncing" = "设备信息同步中";
