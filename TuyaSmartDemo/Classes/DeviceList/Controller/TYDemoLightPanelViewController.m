@@ -158,7 +158,7 @@ typedef struct {float b, s, f;} BSFType;  //brightness satutation frequency
 - (TYSliderView *)saturationSliderView {
     if (!_saturationSliderView) {
         
-        _saturationSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.switchButton.bottom + 30, APP_CONTENT_WIDTH - 80, 44)];
+        _saturationSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.switchButton.bottom + 30, APP_CONTENT_WIDTH - 80, 40)];
         _saturationSliderView.tipsLabel.text = TYSDKDemoLocalizedString(@"saturation", nil);
         
         _saturationSliderView.delegate = self;

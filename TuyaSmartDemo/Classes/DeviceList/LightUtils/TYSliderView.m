@@ -50,7 +50,7 @@
 - (UILabel *)tipsLabel {
     
     if (!_tipsLabel) {
-        _tipsLabel = [UILabel ty_labelWithText:@"" font:[UIFont systemFontOfSize:10] textColor:TY_HexColor(0x6480B3) frame:CGRectMake(4, 0, self.width, 16)];
+        _tipsLabel = [UILabel ty_labelWithText:@"" font:[UIFont systemFontOfSize:14] textColor:TY_HexColor(0x6480B3) frame:CGRectMake(4, 0, self.width, 16)];
     }
     return _tipsLabel;
     
