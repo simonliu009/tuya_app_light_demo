@@ -156,20 +156,21 @@ typedef struct {float b, s, f;} BSFType;  //brightness satutation frequency
     return _switchButton;
 }
 
-- (TYSliderView *)brightSliderView {
-    if (!_brightSliderView) {
-        _brightSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.switchButton.bottom, APP_CONTENT_WIDTH - 80, 44)];
-        _brightSliderView.tipsLabel.text = TYSDKDemoLocalizedString(@"Bright", nil);
-        _brightSliderView.delegate = self;
-        _brightSliderView.tag = 1;
+- (TYSliderView *)saturationSliderView {
+    if (!_saturationSliderView) {
+        _saturationSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.switchButton.bottom + 30, APP_CONTENT_WIDTH - 80, 44)];
+        _saturationSliderView.tipsLabel.text = TYSDKDemoLocalizedString(@"saturation", nil);
+        _saturationSliderView.delegate = self;
+        _saturationSliderView.tag = 3;
     }
-    
-    return _brightSliderView;
+    return _saturationSliderView;
 }
+
+
 
 - (TYSliderView *)tempSliderView {
     if (!_tempSliderView) {
-        _tempSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.brightSliderView.bottom + 16, APP_CONTENT_WIDTH - 80, 44)];
+        _tempSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.saturationSliderView.bottom + 16, APP_CONTENT_WIDTH - 80, 44)];
         _tempSliderView.tipsLabel.text = TYSDKDemoLocalizedString(@"Temperature", nil);
         _tempSliderView.delegate = self;
         _tempSliderView.tag = 2;
@@ -180,7 +181,7 @@ typedef struct {float b, s, f;} BSFType;  //brightness satutation frequency
 
 - (RSColorPickerView *)colorPicker {
     if (!_colorPicker) {
-        _colorPicker = [[RSColorPickerView alloc] initWithFrame:CGRectMake((APP_SCREEN_WIDTH - 290)/2, self.tempSliderView.bottom + 16, 290, 290)];
+        _colorPicker = [[RSColorPickerView alloc] initWithFrame:CGRectMake((APP_SCREEN_WIDTH - 250)/2, self.tempSliderView.bottom + 40, 250, 250)];
         _colorPicker.delegate = self;
         _colorPicker.cropToCircle = YES;
         _colorPicker.showLoupe = NO;
@@ -188,15 +189,17 @@ typedef struct {float b, s, f;} BSFType;  //brightness satutation frequency
     return _colorPicker;
 }
 
-- (TYSliderView *)saturationSliderView {
-    if (!_saturationSliderView) {
-        _saturationSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.colorPicker.bottom + 16, APP_CONTENT_WIDTH - 80, 44)];
-        _saturationSliderView.tipsLabel.text = TYSDKDemoLocalizedString(@"saturation", nil);
-        _saturationSliderView.delegate = self;
-        _saturationSliderView.tag = 3;
+- (TYSliderView *)brightSliderView {
+    if (!_brightSliderView) {
+        _brightSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.colorPicker.bottom + 40, APP_CONTENT_WIDTH - 80, 44)];
+        _brightSliderView.tipsLabel.text = TYSDKDemoLocalizedString(@"Bright", nil);
+        _brightSliderView.delegate = self;
+        _brightSliderView.tag = 1;
     }
-    return _saturationSliderView;
+    
+    return _brightSliderView;
 }
+
 
 - (void)switchAction:(UISwitch *)sender {
     // 开关操作
