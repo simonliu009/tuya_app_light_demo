@@ -65,12 +65,17 @@
 
 - (TYSlider *)slider {
     if (!_slider) {
-        _slider = [[TYSlider alloc] initWithFrame:CGRectMake(0, self.height - 24, self.width - 55, 24)];
+        _slider = [[TYSlider alloc] initWithFrame:CGRectMake(0, self.height - 8, self.width - 55, 24)];
         _slider.minimumValue = 0.f;
         _slider.maximumValue = 1.f;
         _slider.minimumTrackTintColor = TY_HexColor(0x6480B3);
         _slider.maximumTrackTintColor = TY_HexAlphaColor(0x6480B3, 0.1);
         _slider.thumbTintColor = [UIColor clearColor];
+        
+        UIImage *LeftTrack= [UIImage imageNamed:@"sliderleft.jpg"];
+        UIImage *RightTrack = [UIImage imageNamed:@"sliderright.jpg"];
+        [_slider setMinimumTrackImage:LeftTrack forState:UIControlStateNormal];
+        [_slider setMaximumTrackImage:RightTrack forState:UIControlStateNormal];
         
         UIImage *image = [UIImage tysdkdemo_DeviceListImageNamed:@"ty_slider_thumb"];
         [_slider setThumbImage:image forState:UIControlStateNormal];

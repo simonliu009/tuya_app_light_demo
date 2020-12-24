@@ -70,7 +70,7 @@ typedef struct {float b, s, f;} BSFType;  //brightness satutation frequency
     [self.view addSubview:self.topBarView];
     // 开关
     [self.view addSubview:self.switchButton];
-    UILabel *label = [UILabel ty_labelWithText:TYSDKDemoLocalizedString(@"ty_timer_switch", nil) font:[UIFont systemFontOfSize:14] textColor:TY_HexColor(0x6480B3)frame:CGRectMake(20 , self.switchButton.top, 60, self.switchButton.height)];
+    UILabel *label = [UILabel ty_labelWithText:TYSDKDemoLocalizedString(@"ty_timer_switch", nil) font:[UIFont systemFontOfSize:18] textColor:TY_HexColor(0x6480B3)frame:CGRectMake(20 , self.switchButton.top, 60, self.switchButton.height)];
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
     
@@ -148,7 +148,6 @@ typedef struct {float b, s, f;} BSFType;  //brightness satutation frequency
 
 - (UISwitch *)switchButton {
     if (!_switchButton) {
-//        _switchButton = [[UISwitch alloc] initWithFrame:CGRectMake((APP_SCREEN_WIDTH - 51) / 2.0, APP_TOP_BAR_HEIGHT + 16, 51, 36)];
         _switchButton = [[UISwitch alloc] initWithFrame:CGRectMake(APP_SCREEN_WIDTH - 80, APP_TOP_BAR_HEIGHT + 16, 51, 36)];
         [_switchButton addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -158,8 +157,10 @@ typedef struct {float b, s, f;} BSFType;  //brightness satutation frequency
 
 - (TYSliderView *)saturationSliderView {
     if (!_saturationSliderView) {
+        
         _saturationSliderView = [[TYSliderView alloc] initWithFrame:CGRectMake(40, self.switchButton.bottom + 30, APP_CONTENT_WIDTH - 80, 44)];
         _saturationSliderView.tipsLabel.text = TYSDKDemoLocalizedString(@"saturation", nil);
+        
         _saturationSliderView.delegate = self;
         _saturationSliderView.tag = 3;
     }
