@@ -66,6 +66,7 @@ fastlane/test_output
 iOSInjectionProject/
 # Tuya Security
 t_s.bmp
+Example/TuyaSmartHomeKit/TYAppDelegate.m
 TYAppDelegate.m
 
 
